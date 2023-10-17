@@ -4,6 +4,11 @@
 #include <QNetworkReply>
 #include <stdexcept>
 
+#include <Windows.h>
+#pragma comment(lib, "Crypt32.lib")
+
+#define REPRODUCE_ROOT_CAUSE
+
 
 class HttpClient {
 public:
@@ -38,11 +43,16 @@ private:
 
 int main(int argc, char *argv[])
 {
+#ifdef REPRODUCE_ROOT_CAUSE
+    // call from https://github.com/qt/qtbase/blob/6.5/src/plugins/tls/schannel/qtls_schannel.cpp#L301
+    HCERTSTORE store = CertOpenSystemStoreW(0, L"ROOT");
+    assert(store);
+#else
     QCoreApplication a(argc, argv);
 
     HttpClient httpClient(nullptr);
     QByteArray result = httpClient.Get(QUrl("https://www.google.com/"));
     qInfo() << result;
-
+#endif
     return 0;
 }
