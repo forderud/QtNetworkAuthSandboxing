@@ -1,5 +1,6 @@
 Reproducer for Qt NetworkAuth [low integrity level (low IL)](https://learn.microsoft.com/en-us/previous-versions/dotnet/articles/bb625960(v=msdn.10)) sandboxing issue on Windows.
 
+Associated Qt issue: [QTBUG-118192: QNetworkAccessManager freezes with low integrity level (low IL) sandboxing](https://bugreports.qt.io/browse/QTBUG-118192).
 
 # Steps to reproduce
 Working baseline:
