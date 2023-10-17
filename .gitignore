@@ -1,6 +1,9 @@
 /.qt
 /.vs
+/x64
+/Debug
 /CMakeFiles
 /*.vcxproj
 /*.vcxproj.filters
 /*.sln
+/*.dir
