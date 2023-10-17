@@ -1,6 +1,6 @@
 # QtNetworkAuthSandboxing
 
-Reproducer for Qt NetworkAuth sandboxing issue on Windows.
+Reproducer for Qt NetworkAuth [low integrity level (low IL)](https://learn.microsoft.com/en-us/previous-versions/dotnet/articles/bb625960(v=msdn.10)) sandboxing issue on Windows.
 
 
 # Steps to reproduce
