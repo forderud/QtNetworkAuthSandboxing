@@ -21,7 +21,7 @@ The root cause appear to be the `CertOpenSystemStore(0, L"ROOT")` calls in [qtls
 
 
 ## Proposed fix
-Replace the `CertOpenSystemStore(0, L"ROOT")` calls with `CertOpenStore(CERT_STORE_PROV_SYSTEM, 0, NULL, CERT_STORE_READONLY_FLAG | CERT_SYSTEM_STORE_CURRENT_USER, L"ROOT")` so that the certificate store is opened in read-only mode.
+Replace the [`CertOpenSystemStore(0, L"ROOT")`](https://learn.microsoft.com/en-us/windows/win32/api/wincrypt/nf-wincrypt-certopensystemstorew) calls with [`CertOpenStore(CERT_STORE_PROV_SYSTEM, 0, NULL, CERT_STORE_READONLY_FLAG | CERT_SYSTEM_STORE_CURRENT_USER, L"ROOT")`](https://learn.microsoft.com/en-us/windows/win32/api/wincrypt/nf-wincrypt-certopenstore) so that the certificate store is opened in read-only mode.
 
 
 # Similar issues
