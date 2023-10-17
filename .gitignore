@@ -1,0 +1,6 @@
+/.qt
+/.vs
+/CMakeFiles
+/*.vcxproj
+/*.vcxproj.filters
+/*.sln
